@@ -15,9 +15,22 @@ interface ImageDimensions {
     width: number
 }
 
+interface SpotlightImage {
+    src: string;
+    alt: string;
+    title?: string;
+    description?: string;
+}
+
 declare global {
     interface Window {
-        Spotlight: any;
+        Spotlight: {
+            show: (gallery: SpotlightImage[], options?: object) => void;
+            init: (options?: object) => void;
+            close: () => void;
+            next: () => void;
+            prev: () => void;
+        }
     }
 }
 
