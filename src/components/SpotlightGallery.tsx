@@ -114,7 +114,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                 {getColumnImages().map((column, columnIndex) => (
                     <div key={columnIndex} className="flex flex-col gap-3">
-                        {column.map((image, imageIndex) => (
+                        {column.map((image: ImageDimensions, imageIndex: number) => (
                             <a
                                 key={`${columnIndex}-${imageIndex}`}
                                 className="spotlight block cursor-pointer overflow-hidden rounded-lg shadow-md"
