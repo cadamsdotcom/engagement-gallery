@@ -33,7 +33,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-200 relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/sparkles.png')] opacity-20 animate-twinkle"></div>
       <main className={`relative container mx-auto px-4 py-8 ${cormorantGaramond.variable} ${dancingScript.variable} font-serif`}>
-        <h1 className="text-5xl font-dancing text-center mb-4 text-gray-800">Chris & Leah</h1>
+        <h1 className="text-5xl font-dancing text-center mb-4 text-gray-800">Leah & Chris</h1>
         <h2 className="text-3xl text-center mb-8 text-gray-600">Thank you for joining us</h2>
 
         <section className="mb-16">
