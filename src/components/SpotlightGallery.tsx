@@ -120,7 +120,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
             className="spotlight-group"
             data-title={title}
             data-animation="fade"
-            data-control="autofit,fullscreen,zoom,prev,next"
+            data-control="autofit,fullscreen,zoom,prev,next,close"
             data-infinite="true"
             data-autohide="true"
         >
