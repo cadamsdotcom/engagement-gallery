@@ -55,9 +55,9 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
     // Determine column count based on window width
     function getInitialColumns() {
         if (typeof window === 'undefined') return 5 // SSR default
-        if (window.innerWidth < 768) return 2       // Tablet
-        if (window.innerWidth < 1024) return 3      // Small desktop
-        if (window.innerWidth < 1280) return 4      // Medium desktop
+        const width = window.innerWidth
+        if (width < 1024) return 3                  // Small desktop
+        else if (width < 1280) return 4             // Medium desktop
         return 5                                    // Large desktop
     }
 
@@ -65,10 +65,8 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
     useEffect(() => {
         function updateColumns() {
             const width = window.innerWidth
-            let newColumns
-            if (width < 640) newColumns = 1
-            else if (width < 768) newColumns = 2
-            else if (width < 1024) newColumns = 3
+            let newColumns: number
+            if (width < 1024) newColumns = 3
             else if (width < 1280) newColumns = 4
             else newColumns = 5
 
@@ -130,7 +128,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
             data-infinite="true"
             data-autohide="true"
         >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+            <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 lg:gap-3">
                 {getColumnImages().map((column, columnIndex) => (
                     <div key={columnIndex} className="flex flex-col gap-3">
                         {column.map((image: ImageDimensions, imageIndex: number) => (
@@ -154,9 +152,10 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
                                         fill
                                         className="object-cover transition-transform hover:scale-110"
                                         unoptimized
-                                        onLoadingComplete={({ naturalWidth, naturalHeight }) =>
-                                            updateImageDimensions(image.index, naturalWidth, naturalHeight)
-                                        }
+                                        onLoad={(e) => {
+                                            const img = e.currentTarget as HTMLImageElement
+                                            updateImageDimensions(image.index, img.naturalWidth, img.naturalHeight)
+                                        }}
                                     />
                                 </div>
                             </a>
