@@ -49,6 +49,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
         alt: `${title} - Photo ${index + 1} of ${images.length}`,
         title,
         description: `Photo ${index + 1} of ${images.length}`,
+        download: true,
     }))
 
     // Determine column count based on window width
