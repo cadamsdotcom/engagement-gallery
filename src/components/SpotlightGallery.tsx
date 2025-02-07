@@ -4,15 +4,17 @@ import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 
 interface GalleryProps {
-    images: { src: string; alt: string }[]
+    images: { src: string; thumb: string }[]
     title: string
 }
 
 interface ImageDimensions {
     src: string
+    thumb: string;
     alt: string
     height: number
     width: number
+    index: number
 }
 
 interface SpotlightImage {
@@ -35,9 +37,14 @@ declare global {
 }
 
 export default function SpotlightGallery({ images, title }: GalleryProps) {
-    const galleryRef = useRef<HTMLDivElement>(null)
     const [imageDimensions, setImageDimensions] = useState<ImageDimensions[]>([])
     const [columns, setColumns] = useState(getInitialColumns())
+    const gallery = images.map((img, index) => ({
+        src: img.src,
+        alt: `${title} ${index + 1} of ${images.length}`,
+        title: title,
+        description: `${title} ${index + 1} of ${images.length}`,
+    }))
 
     // Helper function to determine column count based on window width
     function getInitialColumns() {
@@ -71,24 +78,28 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
     // Get image dimensions
     useEffect(() => {
         const loadImages = async () => {
-            const dimensionsPromises = images.map(img =>
+            const dimensionsPromises = images.map((img, index) =>
                 new Promise<ImageDimensions>((resolve) => {
                     const imgElement = document.createElement('img')
                     imgElement.src = img.src
                     imgElement.onload = () => {
                         resolve({
                             src: img.src,
-                            alt: img.alt,
+                            thumb: img.thumb,
+                            alt: `${title} ${index + 1} of ${images.length}`,
                             height: imgElement.naturalHeight,
-                            width: imgElement.naturalWidth
+                            width: imgElement.naturalWidth,
+                            index: index
                         })
                     }
                     imgElement.onerror = () => {
                         resolve({
                             src: img.src,
-                            alt: img.alt,
+                            thumb: img.thumb,
+                            alt: `${title} ${index + 1} of ${images.length}`,
                             height: 400,
-                            width: 600
+                            width: 600,
+                            index: index
                         })
                     }
                 })
@@ -116,8 +127,6 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
 
     return (
         <div
-            ref={galleryRef}
-            className="spotlight-group"
             data-title={title}
             data-animation="fade"
             data-control="autofit,fullscreen,zoom,prev,next,close"
@@ -130,8 +139,12 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
                         {column.map((image: ImageDimensions, imageIndex: number) => (
                             <a
                                 key={`${columnIndex}-${imageIndex}`}
-                                className="spotlight block cursor-pointer overflow-hidden rounded-lg shadow-md"
-                                href={image.src}
+                                className="block cursor-pointer overflow-hidden rounded-lg shadow-md"
+                                onClick={() => {
+                                    window.Spotlight.show(gallery, {
+                                        index: image.index + 1
+                                    })
+                                }}
                                 data-title={image.alt}
                             >
                                 <div
@@ -141,7 +154,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
                                     }}
                                 >
                                     <Image
-                                        src={image.src}
+                                        src={image.thumb}
                                         alt={image.alt}
                                         fill
                                         className="object-cover transition-transform hover:scale-110"
