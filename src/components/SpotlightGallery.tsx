@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 interface GalleryProps {
@@ -109,7 +109,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
         }
 
         loadImages()
-    }, [images])
+    }, [images, title])
 
     // Distribute images across columns
     const getColumnImages = () => {
