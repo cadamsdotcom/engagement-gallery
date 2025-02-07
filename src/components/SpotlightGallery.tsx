@@ -41,9 +41,9 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
     const [columns, setColumns] = useState(getInitialColumns())
     const gallery = images.map((img, index) => ({
         src: img.src,
-        alt: `${title} ${index + 1} of ${images.length}`,
+        alt: `${title} - Photo ${index + 1} of ${images.length}`,
         title: title,
-        description: `${title} ${index + 1} of ${images.length}`,
+        description: `Photo ${index + 1} of ${images.length}`,
     }))
 
     // Helper function to determine column count based on window width
@@ -128,7 +128,6 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
     return (
         <div
             data-title={title}
-            data-animation="fade"
             data-control="autofit,fullscreen,zoom,prev,next,close"
             data-infinite="true"
             data-autohide="true"
