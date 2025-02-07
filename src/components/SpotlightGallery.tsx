@@ -10,7 +10,7 @@ interface GalleryProps {
 
 interface ImageDimensions {
     src: string
-    thumb: string;
+    thumb: string
     alt: string
     height: number
     width: number
@@ -18,45 +18,50 @@ interface ImageDimensions {
 }
 
 interface SpotlightImage {
-    src: string;
-    alt: string;
-    title?: string;
-    description?: string;
+    src: string
+    alt: string
+    title?: string
+    description?: string
 }
 
 declare global {
     interface Window {
         Spotlight: {
-            show: (gallery: SpotlightImage[], options?: object) => void;
-            init: (options?: object) => void;
-            close: () => void;
-            next: () => void;
-            prev: () => void;
+            show: (gallery: SpotlightImage[], options?: object) => void
+            init: (options?: object) => void
+            close: () => void
+            next: () => void
+            prev: () => void
         }
     }
 }
 
 export default function SpotlightGallery({ images, title }: GalleryProps) {
+    const defaultWidth = 600
+    const defaultHeight = 400
+    const defaultAspectRatio = defaultHeight / defaultWidth
+
+    // Initialize each image with default dimensions
     const [imageDimensions, setImageDimensions] = useState<ImageDimensions[]>([])
     const [columns, setColumns] = useState(getInitialColumns())
+
     const gallery = images.map((img, index) => ({
         src: img.src,
         alt: `${title} - Photo ${index + 1} of ${images.length}`,
-        title: title,
+        title,
         description: `Photo ${index + 1} of ${images.length}`,
     }))
 
-    // Helper function to determine column count based on window width
+    // Determine column count based on window width
     function getInitialColumns() {
         if (typeof window === 'undefined') return 5 // SSR default
-        if (window.innerWidth < 640) return 1       // Mobile
         if (window.innerWidth < 768) return 2       // Tablet
         if (window.innerWidth < 1024) return 3      // Small desktop
         if (window.innerWidth < 1280) return 4      // Medium desktop
         return 5                                    // Large desktop
     }
 
-    // Update columns when window resizes
+    // Update columns on window resize
     useEffect(() => {
         function updateColumns() {
             const width = window.innerWidth
@@ -75,53 +80,46 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
         return () => window.removeEventListener('resize', updateColumns)
     }, [])
 
-    // Get image dimensions
+    // Initialize default dimensions for every image when images prop changes
     useEffect(() => {
-        const loadImages = async () => {
-            const dimensionsPromises = images.map((img, index) =>
-                new Promise<ImageDimensions>((resolve) => {
-                    const imgElement = document.createElement('img')
-                    imgElement.src = img.src
-                    imgElement.onload = () => {
-                        resolve({
-                            src: img.src,
-                            thumb: img.thumb,
-                            alt: `${title} ${index + 1} of ${images.length}`,
-                            height: imgElement.naturalHeight,
-                            width: imgElement.naturalWidth,
-                            index: index
-                        })
-                    }
-                    imgElement.onerror = () => {
-                        resolve({
-                            src: img.src,
-                            thumb: img.thumb,
-                            alt: `${title} ${index + 1} of ${images.length}`,
-                            height: 400,
-                            width: 600,
-                            index: index
-                        })
-                    }
-                })
-            )
-            const dimensions = await Promise.all(dimensionsPromises)
-            setImageDimensions(dimensions)
-        }
+        const initialDimensions = images.map((img, index) => ({
+            src: img.src,
+            thumb: img.thumb,
+            alt: `${title} - Photo ${index + 1} of ${images.length}`,
+            height: defaultHeight,
+            width: defaultWidth,
+            index,
+        }))
+        setImageDimensions(initialDimensions)
+    }, [images, title, defaultWidth, defaultHeight])
 
-        loadImages()
-    }, [images, title])
+    // Update the dimensions for a given image after its thumbnail loads
+    const updateImageDimensions = (index: number, naturalWidth: number, naturalHeight: number) => {
+        setImageDimensions(prevDimensions => {
+            const newDimensions = [...prevDimensions]
+            // Only update if the dimensions have changed to avoid extra re-renders.
+            if (
+                newDimensions[index].width !== naturalWidth ||
+                newDimensions[index].height !== naturalHeight
+            ) {
+                newDimensions[index] = {
+                    ...newDimensions[index],
+                    width: naturalWidth,
+                    height: naturalHeight,
+                }
+            }
+            return newDimensions
+        })
+    }
 
-    // Distribute images across columns
+    // Distribute images across the calculated columns
     const getColumnImages = () => {
-        if (!imageDimensions.length) return Array(columns).fill([])
-
-        const columnImages: ImageDimensions[][] = Array(columns).fill(null).map(() => [])
-
+        if (!imageDimensions.length) return Array.from({ length: columns }, () => [])
+        const columnImages: ImageDimensions[][] = Array.from({ length: columns }, () => [])
         imageDimensions.forEach((img, index) => {
             const columnIndex = index % columns
             columnImages[columnIndex].push(img)
         })
-
         return columnImages
     }
 
@@ -140,9 +138,7 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
                                 key={`${columnIndex}-${imageIndex}`}
                                 className="block cursor-pointer overflow-hidden rounded-lg shadow-md"
                                 onClick={() => {
-                                    window.Spotlight.show(gallery, {
-                                        index: image.index + 1
-                                    })
+                                    window.Spotlight.show(gallery, { index: image.index + 1 })
                                 }}
                                 data-title={image.alt}
                             >
@@ -158,6 +154,9 @@ export default function SpotlightGallery({ images, title }: GalleryProps) {
                                         fill
                                         className="object-cover transition-transform hover:scale-110"
                                         unoptimized
+                                        onLoadingComplete={({ naturalWidth, naturalHeight }) =>
+                                            updateImageDimensions(image.index, naturalWidth, naturalHeight)
+                                        }
                                     />
                                 </div>
                             </a>
