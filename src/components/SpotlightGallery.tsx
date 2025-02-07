@@ -39,7 +39,6 @@ declare global {
 export default function SpotlightGallery({ images, title }: GalleryProps) {
     const defaultWidth = 600
     const defaultHeight = 400
-    const defaultAspectRatio = defaultHeight / defaultWidth
 
     // Initialize each image with default dimensions
     const [imageDimensions, setImageDimensions] = useState<ImageDimensions[]>([])
