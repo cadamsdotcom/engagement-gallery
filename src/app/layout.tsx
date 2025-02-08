@@ -20,13 +20,13 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/css/spotlight.min.css"
+          href="/vendor/spotlight-pr-93.min.css"
         />
       </head>
       <body className={inter.className}>
         {children}
         <Script
-          src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/js/spotlight.min.js"
+          src="/vendor/spotlight-pr-93.min.js"
           strategy="lazyOnload"
         />
       </body>
