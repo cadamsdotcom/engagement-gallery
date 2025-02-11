@@ -90,7 +90,8 @@ export default function Home() {
         <div style={{ display: activeCity === 'sydney' ? 'block' : 'none' }}>
           <section className="mt-16">
             <h3 className="text-4xl font-bold text-center mb-6 text-gray-800">Sydney - November 23rd, 2024</h3>
-            <p className="text-center mb-6 text-gray-600">Thank you for shining with us to celebrate our engagement in Sydney. It was a beautiful sunny day in the bubble (North Bondi!) and we were so happy to share it with Leah&apos;s parents Kathie and Warren (&quot;Wazza&quot;), her sister Kate, Leah&apos;s extended family, as well as Chris&apos; mum Trish, and all of you, our wonderful friends. Shout out to Keaton who journeyed from Melbourne to celebrate with us.</p>
+            <p className="text-center mb-6 text-gray-600">Thank you for shining with us to celebrate our engagement in Sydney. It was a beautiful sunny day in the bubble (North Bondi!)</p>
+            <p className="text-center mb-6 text-gray-600">We were joined by Leah&apos;s parents Kathie and Warren (&quot;Wazza&quot;), her sister Kate, Leah&apos;s extended family, as well as Chris&apos; mum Trish, and of course all of you, our wonderful friends. Shout out to Keaton who journeyed from Melbourne to celebrate with us.</p>
             <p className="text-center mb-6 text-gray-600">The day was on fire. A balmy Sydney summer arvo, peaking with a pod of dolphins showing up offshore. It was a special sight for Chris&apos; mum.</p>
             <p className="text-center mb-6 text-gray-600">We&apos;d like to thank the amazing Brilee Wood of Goodie Gum Drops Cafe who supplied the spread and cake <i>with one week&apos;s notice!</i> Just look at those photos!</p>
             <p className="text-center mb-6 text-gray-600">Last but not least thank you to the staff at North Bondi Surf Lifesaving Club for your hospitality.</p>
