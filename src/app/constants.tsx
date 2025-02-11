@@ -117,7 +117,6 @@ export const photosMelbourneTristan = [
 ]
 
 export const photosMelbourneOurs = [
-    { src: '/photos/melbourne-ours/original/IMG_3837.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3837.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3839.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3839.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3842.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3842.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3848.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3848.jpg' },
@@ -129,14 +128,8 @@ export const photosMelbourneOurs = [
     { src: '/photos/melbourne-ours/original/IMG_3879.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3879.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3886.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3886.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3892.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3892.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3896.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3896.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3906.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3906.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3925.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3925.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3933.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3933.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3946.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3946.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3951.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3951.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3954.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3954.jpg' },
-    { src: '/photos/melbourne-ours/original/IMG_3967.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3967.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3974.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3974.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3983.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3983.jpg' },
     { src: '/photos/melbourne-ours/original/IMG_3988.HEIC', thumb: '/photos/melbourne-ours/thumbnail/IMG_3988.jpg' },
@@ -381,8 +374,6 @@ export const photosSydneyOurs = [
     { src: '/photos/sydney-ours/original/IMG_6845.jpg', thumb: '/photos/sydney-ours/thumbnail/IMG_6845.jpg' },
     { src: '/photos/sydney-ours/original/IMG_7487.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7487.jpg' },
     { src: '/photos/sydney-ours/original/IMG_7493.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7493.jpg' },
-    { src: '/photos/sydney-ours/original/IMG_7501.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7501.jpg' },
-    { src: '/photos/sydney-ours/original/IMG_7502.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7502.jpg' },
     { src: '/photos/sydney-ours/original/IMG_7505.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7505.jpg' },
     { src: '/photos/sydney-ours/original/IMG_7520.JPG', thumb: '/photos/sydney-ours/thumbnail/IMG_7520.jpg' },
     { src: '/photos/sydney-ours/original/IMG_4295.HEIC', thumb: '/photos/sydney-ours/thumbnail/IMG_4295.jpg' },
