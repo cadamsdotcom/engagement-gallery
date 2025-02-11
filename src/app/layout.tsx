@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '../styles/spotlight-pr-93.min.css'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,16 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          rel="stylesheet"
-          href="/vendor/spotlight-pr-93.min.css"
-        />
-      </head>
       <body className={inter.className}>
         {children}
         <Script
-          src="/vendor/spotlight-pr-93.min.js"
+          src="/spotlight-pr-93.min.js"
           strategy="lazyOnload"
         />
       </body>
