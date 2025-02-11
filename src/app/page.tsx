@@ -92,10 +92,11 @@ export default function Home() {
             <h3 className="text-4xl font-bold text-center mb-6 text-gray-800">Sydney - November 23rd, 2024</h3>
             <p className="text-center mb-6 text-gray-600">Thanks you for shining with us to celebrate our engagement with us in Sydney. It was a beautiful sunny day in the bubble (North Bondi!) and we were so happy to share it with Leah&apos;s parents Kathie and Warren (&quot;Wazza&quot;), her sister Kate, Leah&apos;s extended family, as well as Chris&apos; mum Trish, and all of you, our wonderful friends. Shout out to Keaton who journeyed from Melbourne to celebrate with us.</p>
             <p className="text-center mb-6 text-gray-600">The day was on fire. A balmy Sydney summer arvo, peaking with a pod of dolphins showing up offshore. It was a special sight for Chris&apos; mum.</p>
-            <p className="text-center mb-6 text-gray-600">We&apos;d like to thank the amazing Brilee Wood of <a href="https://www.instagram.com/goodiegumdropscafe" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Goodie Gum Drops Cafe</a> who supplied the spread and cake <i>with one week&apos;s notice!</i> Just look at those photos!</p>
-            <p className="text-center mb-6 text-gray-600">Last but not least thank you to the staff at <a href="https://northbondisurfclub.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">North Bondi Surf Lifesaving Club</a> for your hospitality.</p>
+            <p className="text-center mb-6 text-gray-600">We&apos;d like to thank the amazing Brilee Wood of Goodie Gum Drops Cafe who supplied the spread and cake <i>with one week&apos;s notice!</i> Just look at those photos!</p>
+            <p className="text-center mb-6 text-gray-600">Last but not least thank you to the staff at North Bondi Surf Lifesaving Club for your hospitality.</p>
             <p className="text-center mb-6 text-gray-600">We won&apos;t call out everyone, but know that we love you and appreciate you very very much. It meant a lot to share the day with you.</p>
             <p className="text-center mb-6 text-gray-600">All our love,<br />Leah & Chris ✨💖</p>
+            <p className="text-center mb-6 text-gray-600">Find Brilee &amp; Goodie Gum Drops Cafe on <a href="https://www.instagram.com/goodiegumdropscafe" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Instagram</a>.</p>
           </section>
 
           <div className="flex justify-center space-x-4 mt-8">
