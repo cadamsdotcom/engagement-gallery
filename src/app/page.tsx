@@ -49,10 +49,11 @@ export default function Home() {
         <div style={{ display: activeCity === 'melbourne' ? 'block' : 'none' }}>
           <section className="mt-16">
             <h3 className="text-4xl font-bold text-center mb-6 text-gray-800">Melbourne - November 9th, 2024</h3>
-            <p className="text-center mb-6 text-gray-600">Thanks for celebrating our engagement with us in Melbourne. It was a beautiful sunny day in Mount Waverley and we were so happy to share it with Chris&apos; wonderful family and friends - now Leah&apos;s family too.</p>
-            <p className="text-center mb-6 text-gray-600">Chris&apos; mum Trish generously opened her home for us to enjoy an afternoon with you all. Thanks mum for your hospitality. Thanks also go to Kerry Collins for keeping us well fed on the day!</p>
-            <p className="text-center mb-6 text-gray-600">To the delight of the nieces and nephew, Leah&apos;s sister Kate came down from Sydney to celebrate with us. Many others traveled to be there with us on the day and a great many old friends turned up including Leah&apos;s friend Meg.</p>
+            <p className="text-center mb-6 text-gray-600">Thank you for celebrating our engagement with us in Melbourne. It was a beautiful sunny day in Mount Waverley and we were so happy to share it with you all - our wonderful family and friends.</p>
+            <p className="text-center mb-6 text-gray-600">Chris&apos; mum, Trish, generously opened her home for us to enjoy an afternoon with you all. Thank you mum for your hospitality. Thank you also to Kerry Collins for keeping us well fed on the day!</p>
+            <p className="text-center mb-6 text-gray-600">To the delight of the nieces and nephew, Leah&apos;s sister, Kate, came down from Sydney to celebrate with us. Many others traveled to be there with us on the day and a great many old friends turned up, including Leah&apos;s dear high school friend, Meg!</p>
             <p className="text-center mb-6 text-gray-600">We won&apos;t call out everyone, but know that we love you and appreciate you very very much. It meant a lot to share the day with you.</p>
+            <p className="text-center mb-6 text-gray-600">All our love,<br />Leah & Chris ✨💖</p>
           </section>
 
           <div className="flex justify-center space-x-4 mt-8">
@@ -89,10 +90,12 @@ export default function Home() {
         <div style={{ display: activeCity === 'sydney' ? 'block' : 'none' }}>
           <section className="mt-16">
             <h3 className="text-4xl font-bold text-center mb-6 text-gray-800">Sydney - November 23rd, 2024</h3>
-            <p className="text-center mb-6 text-gray-600">Thanks for celebrating our engagement with us in Sydney. It was a beautiful sunny day in North Bondi and we were so happy to share it with Leah&apos;s parents, sister and extended family, as well as Chris&apos; mum and all of you, our wonderful friends.</p>
-            <p className="text-center mb-6 text-gray-600">The day was stunning - we even had a pod of dolphins show up offshore. It was a special sight for Chris&apos; mum.</p>
-            <p className="text-center mb-6 text-gray-600">We&apos;d like to thank the amazing folks who supplied the spread - just look at those photos! As well thanks to the lovely staff at North Bondi Surf Lifesaving Club for your hospitality.</p>
+            <p className="text-center mb-6 text-gray-600">Thanks you for shining with us to celebrate our engagement with us in Sydney. It was a beautiful sunny day in the bubble (North Bondi!) and we were so happy to share it with Leah&apos;s parents Kathie and Warren (&quot;Wazza&quot;), her sister Kate, Leah&apos;s extended family, as well as Chris&apos; mum Trish, and all of you, our wonderful friends. Shout out to Keaton who journeyed from Melbourne to celebrate with us.</p>
+            <p className="text-center mb-6 text-gray-600">The day was on fire. A balmy Sydney summer arvo, peaking with a pod of dolphins showing up offshore. It was a special sight for Chris&apos; mum.</p>
+            <p className="text-center mb-6 text-gray-600">We&apos;d like to thank the amazing Brilee Wood of <a href="https://www.instagram.com/goodiegumdropscafe" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">Goodie Gum Drops Cafe</a> who supplied the spread and cake <i>with one week&apos;s notice!</i> Just look at those photos!</p>
+            <p className="text-center mb-6 text-gray-600">Last but not least thank you to the staff at <a href="https://northbondisurfclub.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">North Bondi Surf Lifesaving Club</a> for your hospitality.</p>
             <p className="text-center mb-6 text-gray-600">We won&apos;t call out everyone, but know that we love you and appreciate you very very much. It meant a lot to share the day with you.</p>
+            <p className="text-center mb-6 text-gray-600">All our love,<br />Leah & Chris ✨💖</p>
           </section>
 
           <div className="flex justify-center space-x-4 mt-8">
